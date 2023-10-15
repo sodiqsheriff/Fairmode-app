@@ -12,7 +12,7 @@ const router = createBrowserRouter([
 function App() {
  
   return (
-    <div className="dark:bg-black h-screen w-full overflow-hidden">
+    <div className="dark:bg-black h-screen w-full overflow-hidden font-Inter">
      <RouterProvider router={router} />
   
     </div>
