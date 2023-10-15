@@ -104,7 +104,7 @@ const Dashboard = () => {
       )}
      
      <div className="flex w-full">
-      <div className="hidden md:block lg:flex-col lg:border-r lg:border-gray-400 lg:h-full   lg:w-1/5">
+      <div className="hidden md:hidden lg:flex-col lg:border-r lg:border-gray-400 lg:h-full   lg:w-1/5">
         <div className=" md:grid grid-cols-2 pl-5 pt-5 border-b border-gray-400 h-16  pb-10">
         <img src={fairLogo} alt="" className='w-full '/>
         </div>
@@ -215,7 +215,7 @@ const Dashboard = () => {
           </div>
           
         </div>
-        <div className=" ms-5 w-96 border md:w-full mt-10 md:mx-5">
+        <div className=" m-5 w-96 border md:w-full mt-10 md:mx-5">
           <div className="flex-col md:flex justify-between p-5 w-full capitalize font-semibold lg:flex lg:flex-row lg:justify-between">
             <h1 className='text-2xl font-bold'>Transaction history</h1>
             <span className="flex-col space-y-2 md:grid grid-cols-2 lg:flex gap-4 lg:flex-row lg:space-y-0">
@@ -245,7 +245,7 @@ const Dashboard = () => {
           </div>
           </div>
         
-          <table className="text-left w-full h-full   m-5  border font-semibold border-gray-300 ">
+          <table className="text-left w-full h-full p-5  m-5 dark:text-white border font-semibold border-gray-300 ">
           <thead className='border text-gray-300 '>
             <tr >
               <th className='p-3'>Name</th>
