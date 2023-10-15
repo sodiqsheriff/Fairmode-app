@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
 import Select from 'react-select';
 import fair from '../assets/fairmoney-logo.png';
@@ -128,7 +129,7 @@ const Login = () => {
               <input type="text"  className='rounded border border-gray-500 h-12 w-full  px-5 font-semibold font-inter' />
             </div>
             <div className=" ">
-              <a href="/Dashboard" className='flex justify-center items-center text-xl font-semibold cursor-pointer text-center rounded mt-10  w-full bg-black dark:bg-white dark:text-green-500 hover:opacity-50  text-white h-12'>Log in</a>
+              <Link to="/Dashboard" className='flex justify-center items-center text-xl font-semibold cursor-pointer text-center rounded mt-10  w-full bg-black dark:bg-white dark:text-green-500 hover:opacity-50  text-white h-12'>Log in</Link>
             </div>
             </div>
             <div className="text-center dark:text-white  pt-4">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineClose } from 'react-icons/md';
 import fairLogo from '../assets/fairmoney-logo.png'
@@ -61,48 +62,59 @@ const Dashboard = () => {
         {isOpen ?( <MdOutlineClose />): <GiHamburgerMenu /> }
       </button>
       {isOpen  &&(
-         <ul className='absolute w-full h-full min-h-full max-h-full bg-white space-y-9 pt-7 px-10 shadow-2xl  lg:hidden ' onClick={toggleMenu}>
+         <ul className='absolute space-y-5 w-full h-full min-h-full max-h-full bg-white md:space-y-9 pt-7 px-10   lg:hidden ' onClick={toggleMenu}>
           <li className="flex text-gray-300 hover:text-blue-900 text-lg capitalize font-semibold gap-3">
             <img src={home} alt="" />
-            <a href="/">Overview</a>
+            <a href="#">Overview</a>
           </li>
           <li className="flex text-gray-300 hover:text-blue-900 text-lg capitalize font-semibold gap-3">
             <img src={arrow} alt="" />
-            <a href="/">Payments</a>
+            <a href="#">Payments</a>
           </li>
           <li className="flex text-gray-300 hover:text-blue-900 text-lg capitalize font-semibold gap-3">
             <img src={loan} alt="" />
-            <a href="/">Loans</a>
+            <a href="#">Loans</a>
           </li>
           <li className="flex text-gray-300 hover:text-blue-900 text-lg capitalize font-semibold gap-3">
             <img src={save} alt="" />
-            <a href="/">Savings</a>
+            <a href="#">Savings</a>
           </li>
           <li className="flex text-gray-300 hover:text-blue-900 text-lg capitalize font-semibold gap-3">
             <img src={payments} alt="" />
-            <a href="/">Payments Method</a>
+            <a href="#">Payments Method</a>
           </li>
           <li className="flex text-gray-300 hover:text-blue-900 text-lg capitalize font-semibold gap-3">
             <img src={settings} alt="" />
-            <a href="/">Settings</a>
+            <a href="#">Settings</a>
           </li>
+          <div className=" pt-5 "> 
+          <span className="flex gap-2 text-gray-400 font-semibold pb-3 ">
+            <img src={care} alt="" />
+            <h1> Chat with Efe!</h1></span>
+            <span className="flex items-center gap-2 text-gray-400 font-semibold  pb-7">
+            <BsArrowRightCircle className='text-2xl ' />
+            <a href='/'> Log out</a></span>
+
+        </div>
          </ul>
+
+
     
 
       )}
      
-     <div className="flex ">
+     <div className="flex w-full">
       <div className="hidden md:block lg:flex-col lg:border-r lg:border-gray-400 lg:h-full   lg:w-1/5">
         <div className=" md:grid grid-cols-2 pl-5 pt-5 border-b border-gray-400 h-16  pb-10">
         <img src={fairLogo} alt="" className='w-full '/>
         </div>
         <div className="md:flex-col  p-5 space-y-9">
-          <a href="/" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={home} alt='' />Overview</a>
-          <a href="/" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={arrow} alt='' />Payments</a>
-          <a href="/" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={loan} alt='' />Loans</a>
-          <a href="/" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={save} alt='' />Savings</a>
-          <a href="/" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={payments} alt='' />Payments</a>
-          <a href="/" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={settings} alt='' />Settings</a>
+          <a href="#" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={home} alt='' />Overview</a>
+          <a href="#" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={arrow} alt='' />Payments</a>
+          <a href="#" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={loan} alt='' />Loans</a>
+          <a href="#" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={save} alt='' />Savings</a>
+          <a href="#" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={payments} alt='' />Payments</a>
+          <a href="#" className='flex gap-3 text-gray-400 font-semibold hover:text-blue-900 hover:text-xl '><img src={settings} alt='' />Settings</a>
         </div>
         <div className=" pt-96 pl-5 "> 
           <span className="flex gap-2 text-gray-400 font-semibold mt-48 pb-7">
@@ -110,7 +122,7 @@ const Dashboard = () => {
             <h1> Chat with Efe!</h1></span>
             <span className="flex items-center gap-2 text-gray-400 font-semibold  pb-7">
             <BsArrowRightCircle className='text-2xl ' />
-            <a href=" /Login "> Log out</a></span>
+            <a href='/'> Log out</a></span>
 
         </div>
       </div>
@@ -141,22 +153,22 @@ const Dashboard = () => {
       {/* Other content of your Dashboard */}
     </div>
         </div>
-       <div className="p-5">
-        <div className="flex-col space-y-3 w-full md:flex md:flex-row md:justify-between">
+       <div className="">
+        <div className="flex-col p-5  space-y-3 w-full md:flex md:flex-row md:justify-between">
           <div className="flex-col">
             <h1 className=" md:text-2xl font-semibold text-black dark:text-white">Overview</h1>
             <h1 className="text-sm text-gray-500">Send money and receive money with ease</h1>
           </div>
           <div className="flex-col">
             <div className="flex gap-2">
-              <a href="/" className='px-2 py-1 flex md:flex border border-gray-400 rounded md:px-3 md:py-2 hover:opacity-50 capitalize items-center dark:text-white'><FaTelegramPlane className='text-xl dark:text-white' /><h1 className="pl-2"> make payments</h1></a>
-              <a href="/" className='px-2 py-1 flex md:flex border border-gray-400 rounded md:px-3 md:py-2 hover:opacity-50 capitalize items-center bg-black text-white'><AiOutlinePlus className='text-xl' /> <h1 className="pl-2">add money</h1></a>
+              <a href="" className='px-2 py-1 flex md:flex border border-gray-400 rounded md:px-3 md:py-2 hover:opacity-50 capitalize items-center dark:text-white'><FaTelegramPlane className='text-xl dark:text-white' /><h1 className="pl-2"> make payments</h1></a>
+              <a href="" className='px-2 py-1 flex md:flex border border-gray-400 rounded md:px-3 md:py-2 hover:opacity-50 capitalize items-center bg-black text-white'><AiOutlinePlus className='text-xl' /> <h1 className="pl-2">add money</h1></a>
             </div>
           </div>
         </div>
-        <div className="flex flex-col  w-full md:grid grid-cols-2 md:w-full md:gap-3 md:pt-5 lg:flex lg:flex-row lg:w-full gap-5 pt-10">
+        <div className="w-96  ps-5 space-y-4   md:grid grid-cols-2 md:w-full md:gap-3 md:pt-5 md:space-y-0 lg:flex lg:flex-row lg:w-full gap-5 pt-10 lg:px-5 lg:space-y-0">
           <div className="w-full bg-black text-white  shadow-2xl rounded hover:opacity-50 p-5 dark:bg-gray-800">
-            <div className="flex flex-col w-full md:flex justify-between">
+            <div className="flex justify-between">
             <h1 className='text-lg tracking-wider'>5910483467</h1>
             <BsArrowRight className='text-2xl' />
             </div>
@@ -164,7 +176,7 @@ const Dashboard = () => {
             <h1 className="text-3xl font-semibold tracking-wider">#50,525.00</h1>
             
           </div>
-            <div className="bg-green-600 text-white flex-col-4 w-full shadow-2xl rounded hover:opacity-50 p-5">
+            <div className="bg-green-600 text-white  w-full shadow-2xl rounded hover:opacity-50 p-5">
             <div className="flex justify-between">
             <h1 className='text-xl font-semibold'>Loans</h1>
             <BsArrowRight className='text-2xl' />
@@ -172,7 +184,7 @@ const Dashboard = () => {
             <h1 className="text-xs pt-7">Available balance</h1>
             <h1 className="text-3xl font-semibold tracking-wider">#527,500.00</h1>
             </div>
-              <div className="bg-blue-500 text-white flex-col-4 shadow-2xl  w-full rounded hover:opacity-50 p-5">
+              <div className="bg-blue-500 text-white  shadow-2xl  w-full rounded hover:opacity-50 p-5">
               <div className="flex justify-between">
             <h1 className='text-xl font-semibold'>Savings</h1>
             <BsArrowRight className='text-2xl' />
@@ -181,32 +193,32 @@ const Dashboard = () => {
             <h1 className="text-3xl font-semibold tracking-wider">#780,230.40</h1>
               </div>
         </div>
-        <div className="flex flex-col w-full pt-5  md:pt-7 md:flex  md:gap-3 md:w-full lg:pt-7 lg:flex  lg:gap-3 lg:w-full">
-          <div className="bg-green-100 border rounded border-gray-300 hover:opacity-50 p-5 flex items-center gap-3 w-96">
+        <div className="space-y-4  w-full p-5 gap-0 md:pt-7 md:flex  md:gap-3 md:w-full lg:pt-7 lg:flex  lg:gap-3 lg:w-full lg:space-y-0 ">
+          <div className="w-96 bg-green-100 border rounded border-gray-300 hover:opacity-50 p-5  md:flex items-center gap-3 md:w-full">
             <BsBell />
             <span>
               <h1 className="text-sm text-black font-semibold pb-2">Upcoming repayment</h1>
-              <h1 className="text-2xl font-semibold">#527,500.00 <t className="text-xs">due by 12th of july</t> </h1>
+              <h1 className="text-2xl font-semibold pb-3 md:pb-0">#527,500.00 <label className="text-xs">due by 12th of july</label> </h1>
             </span>
             <a href="" className='px-12 py-2 text-white font-semibold bg-black rounded-2xl'>Repay</a>
 
           </div>
-          <div className="bg-yellow-200 border rounded border-gray-300 hover:opacity-50 p-5 flex items-center gap-3 w-full">
+          <div className="w-96 bg-yellow-200 border rounded border-gray-300 hover:opacity-50 p-5 md:flex items-center gap-3 md:w-full">
             <img src={save} alt="" />
             <span>
               <h1 className="text-xl text-black pb-2">Earn 27% on your savings</h1>
               <h1 className="text-xs">FairLock your savings % earn highest </h1>
-              <h1 className="text-xs">ever interest on your savings</h1>
+              <h1 className="text-xs pb-3 md:pb-0">ever interest on your savings</h1>
             </span>
             <a href="" className='px-12 py-2 text-white font-semibold bg-black rounded-3xl'>Save now!</a>
 
           </div>
           
         </div>
-        <div className="auto border  w-full mt-10">
-          <div className="flex justify-between p-5 capitalize font-semibold">
+        <div className=" ms-5 w-96 border md:w-full mt-10 md:mx-5">
+          <div className="flex-col md:flex justify-between p-5 w-full capitalize font-semibold lg:flex lg:flex-row lg:justify-between">
             <h1 className='text-2xl font-bold'>Transaction history</h1>
-            <span className="flex gap-4">
+            <span className="flex-col space-y-2 md:grid grid-cols-2 lg:flex gap-4 lg:flex-row lg:space-y-0">
               <div  className='flex items-center border border-gray-300 px-3 rounded'>
                 <FiSearch className='text-gray-500' />
               <input type="search" placeholder='Search Transaction' className='text-gray-500 p-1 border-none outline-none '/>
@@ -232,8 +244,8 @@ const Dashboard = () => {
             </div>
           </div>
           </div>
-          <div className="h-80">
-          <table className="text-left w-full h-full overflow-scroll  border font-semibold border-gray-300 ">
+        
+          <table className="text-left w-full h-full   m-5  border font-semibold border-gray-300 ">
           <thead className='border text-gray-300 '>
             <tr >
               <th className='p-3'>Name</th>
@@ -245,42 +257,42 @@ const Dashboard = () => {
           </thead>
           <tbody className='border border-gray-300 '>
           <tr>
-            <td className='px-2'>PAYSTACK CHECKOUT</td>
+            <td className='p-5'>PAYSTACK CHECKOUT</td>
             <td>Money received</td>
             <td>June 21th, 10:30AM</td>
             <td>+2,250.00</td>
-            <td ><a href="/" className="bg-green-200 text-green-500 px-2 py-1 rounded font-semibold">Successful</a></td>
+            <td ><a href="" className="bg-green-200 text-green-500 px-2 py-1 rounded font-semibold">Successful</a></td>
           </tr>
           </tbody>
           <tbody className='border border-gray-300 '>
           <tr>
-            <td className='px-2'>MTN MOBILE TOPUP</td>
+            <td className='p-5'>MTN MOBILE TOPUP</td>
             <td>Airtime Recharge</td>
             <td>June 11th, 01:00AM</td>
             <td>+5,000.00</td>
-            <td ><a href="/" className="bg-red-200 text-red-500 py-1 px-2  w-28 rounded font-semibold">Failed</a></td>
+            <td ><a href="" className="bg-red-200 text-red-500 py-1 px-2  w-28 rounded font-semibold">Failed</a></td>
           </tr>
           </tbody>
           <tbody className='border border-gray-300 '>
           <tr>
-            <td className='px-2'>AFOLABI OLAMILEKAN OLANREWAJU</td>
+            <td className='p-5'>AFOLABI OLAMILEKAN OLANREWAJU</td>
             <td>Money Sent</td>
             <td>June 10th, 09:10AM</td>
             <td>+1,000.00</td>
-            <td ><a href="/" className="bg-yellow-200 text-yellow-500 py-1 px-2 w-28 rounded font-semibold">Pending</a></td>
+            <td ><a href="" className="bg-yellow-200 text-yellow-500 py-1 px-2 w-28 rounded font-semibold">Pending</a></td>
           </tr>
           </tbody>
           <tbody className='border border-gray-300 p-5'>
           <tr className=''>
-            <td className='px-2'>SODIQ SHERIFF OLUWATOBI</td>
+            <td className='p-5'>SODIQ SHERIFF OLUWATOBI</td>
             <td>Money Received</td>
             <td>June 7th, 01:30AM</td>
             <td>+20,000.00</td>
-            <td> <a href="/" className="bg-green-200 text-green-500 px-2 py-1 rounded font-semibold">Successful</a></td>
+            <td> <a href="" className="bg-green-200 text-green-500 px-2 py-1 rounded font-semibold">Successful</a></td>
           </tr>
           </tbody>
         </table>
-        </div>
+       
        </div>
       </div>
       
