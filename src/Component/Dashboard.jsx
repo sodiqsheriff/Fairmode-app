@@ -104,7 +104,7 @@ const Dashboard = () => {
       )}
      
      <div className="flex w-full">
-      <div className="hidden md:hidden lg:flex-col lg:border-r lg:border-gray-400 lg:h-full   lg:w-1/5">
+      <div className="hidden md:hidden lg:grid lg:border-r lg:border-gray-400 lg:h-full   lg:w-1/5">
         <div className=" md:grid grid-cols-2 pl-5 pt-5 border-b border-gray-400 h-16  pb-10">
         <img src={fairLogo} alt="" className='w-full '/>
         </div>
@@ -126,7 +126,7 @@ const Dashboard = () => {
 
         </div>
       </div>
-      <div className=" h-full w-4/5">
+      <div className=" w-full h-full  lg:w-4/5">
         <div className="flex space-x-12 pt-5 items-center justify-between h-10  md:flex  md:justify-between md:h-16 md:w-full md:border-b md:border-gray-400 md:pb-10 md:px-5 md:pt-5">
           <div className="w-sm p-5 md:flex-col-10 leading-0 ">
             <h1 className="text-sm text-gray-400 dark:text-white">Hello</h1>
