@@ -95,7 +95,7 @@ const Dashboard = () => {
             <h1 className='hover:text-blue-500'> Chat with Efe!</h1></span>
             <span className="flex items-center gap-2 text-gray-400 font-semibold  pb-24 dark:text-white hover:text-blue-500">
             <BsArrowRightCircle className='text-2xl ' />
-            <a href='/' className='hover:text-blue-500'> Log out</a></span>
+            <a href='/dashboard' className='hover:text-blue-500'> Log out</a></span>
 
         </div>
          </ul>
