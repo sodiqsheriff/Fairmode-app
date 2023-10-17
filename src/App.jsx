@@ -7,12 +7,12 @@ import Dashboard from './Component/Dashboard';
 import './App.css'
 const router = createBrowserRouter([
   {path:'/', element:<Login />},
-  {path:'Dashboard', element:<Dashboard />},
+  {path:'dashboard', element:<Dashboard />},
 ])
 function App() {
  
   return (
-    <div className="dark:bg-black h-screen w-full  font-Inter">
+    <div className="dark:bg-black h- w-full  font-Inter">
      <RouterProvider router={router} />
   
     </div>
