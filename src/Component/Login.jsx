@@ -8,6 +8,7 @@ import KenyaFlag from '../assets/kenya.png';
 import EgyptFlag from '../assets/egypt.png';
 import SouthAfricaFlag from '../assets/south.png';
 import EthiopiaFlag from '../assets/ethopia.png';
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 
 const countries = [
   { value: 'ng', label: <img src={NigeriaFlag} alt="Nigeria" />, flag: NigeriaFlag },
@@ -58,6 +59,18 @@ const Login = () => {
     setIsDarkMode(!isDarkMode);
   };
   
+  const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState('');
+  const [isPasswordFilled, setIsPasswordFilled] = useState(false);
+
+  const togglePasswordVisibilty =()=>{
+    setShowPassword(!showPassword);
+  };
+  const handlePasswordChange =(e)=>{
+    const inputValue = e.target.value;
+    setPassword(inputValue);
+    setIsPasswordFilled(!!inputValue); //check if input is not empty
+  };
 
 
 
@@ -68,20 +81,18 @@ const Login = () => {
     <div className="dashboard dark:bg-gray-900 ">
     <h1 className="text-white"></h1>
     <div className="theme-switcher flex items-center dark:bg-black p-2 rounded-md shadow-inner">
-      <div className="flex w-md ">
+    <div className={`theme-switcher flex gap-2 items-center ${isDarkMode ? 'dark:bg-black' : 'bg-white'} p-2 rounded-md shadow-inner`}>
+      <p className="ml-2 text-black dark:text-white">{isDarkMode ? 'Dark Mode' : 'Light Mode'}</p>
         <button
           onClick={toggleTheme}
-          className={`p-2  rounded-full transition-all duration-300 ${
-            isDarkMode
-              ? 'bg-gray-300 shadow-2xl'
-              : 'bg-gray-300 shadow-inner'
-          }`}
+          className={`p-2 rounded-full transition-all duration-300 ${isDarkMode ? 'bg-gray-800 shadow-2xl' : 'bg-white shadow-inner'}`}
         >
-          {isDarkMode ? <IoMoonOutline /> : <IoSunnyOutline />}
+          <div className="flex   space-x-5">
+            {isDarkMode ? <IoSunnyOutline className='bg-gray-400 text-white h-5 shadow-inner dark:bg-gray-800 dark:text-gray-600  rounded w-7'  /> : <IoMoonOutline  />}
+            {isDarkMode ? <IoMoonOutline className='dark:text-white '/> : <IoSunnyOutline   className='text-white bg-gray-400 h-5 shadow-inner dark:bg-black  rounded w-7' />}
+          </div>
         </button>
-        <p className="ml-2 text-black dark:text-white">
-          {isDarkMode ? 'Dark Mode' : 'Light Mode'}
-        </p>
+       
       </div>
        <div>
 
@@ -119,22 +130,37 @@ const Login = () => {
         styles={customStyles}
       />
     </div>
-              <input type="text" placeholder='901 732 5355' className='rounded border border-gray-500 h-12 w-full  px-5 font-semibold font-inter' />
+              <input type="text" placeholder='901 732 5355' className='rounded border border-gray-500 h-12 w-full  px-5 font-semibold font-inter' required />
               </div>
-              <div>
+              <div className='relative'>
                 <span className='flex justify-between'>
                   <h1 className='font-bold dark:text-white'>Fairmoney Pin</h1>
                   <h1 className='text-gray-400 dark:text-white dark:hover:opacity-50'>Forgot your PIN?</h1>
                 </span>
-              <input type="text"  className='rounded border border-gray-500 h-12 w-full  px-5 font-semibold font-inter' />
+              <input type={showPassword ? 'text' : 'password'} placeholder='Password' value={password} onChange={handlePasswordChange}  className='rounded border border-gray-500 h-12 w-full  px-5 font-semibold font-inter' required/>
+              <span  onClick={togglePasswordVisibilty} className='absolute right-4 top-1/2 transform-translate-y-1/2 cursor-pointer'>
+                {showPassword ? (
+                  <AiOutlineEyeInvisible size={20} />
+                ) : (
+                  <AiOutlineEye size={20} />
+                )}
+              
+
+              </span>
             </div>
-            <div className=" ">
-              <Link to="/Dashboard" className='flex justify-center items-center text-xl font-semibold cursor-pointer text-center rounded mt-10  w-full bg-black dark:bg-white dark:text-green-500 hover:opacity-50  text-white h-12'>Log in</Link>
-            </div>
+          
+            <a
+        href={isPasswordFilled ? '/Dashboard' : null} // Disable the anchor if the input is empty
+        className={`flex justify-center mt-10 text-center transform -translate-y-1/2 bg-black text-white dark:bg-white dark:text-green-500 hover:opacity-50 hover:text-white rounded-md px-2 py-2 ${
+          isPasswordFilled ? 'cursor-pointer' : 'cursor-not-allowed'
+        }`}
+      >
+        Log In
+      </a>
             </div>
             <div className="text-center dark:text-white  pt-4">
-              <a href="/">Are you new user? </a>
-              <a href="/" className='font-bold hover:opacity-50 '>Create an account</a>
+              <a href="">Are you new user? </a>
+              <a href="" className='font-bold hover:opacity-50 '>Create an account</a>
             </div>
             
             <h1 className="text-center text-gray-500 pt-10 text-sm">
