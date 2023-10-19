@@ -67,7 +67,7 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
   const handlePasswordChange =(e)=>{
-    const inputValue = e.target.value;
+    const inputValue = e.target.value.trim;
     setPassword(inputValue);
     setIsPasswordFilled(!!inputValue); //check if input is not empty
   };
