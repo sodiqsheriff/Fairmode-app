@@ -169,7 +169,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="block space-y-4 md:grid grid-cols-2 lg:flex p-5 w-full gap-5">
+        <div className="block space-y-4 md:grid grid-cols-2 md:space-y-0 lg:flex p-5 w-full gap-5 lg:space-y-0">
         <div className="w-full bg-black text-white  shadow-2xl rounded hover:opacity-50 p-5 dark:bg-gray-800">
             <div className="flex justify-between">
             <h1 className='text-lg tracking-wider'>5910483467</h1>

@@ -67,9 +67,9 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
   const handlePasswordChange =(e)=>{
-    const inputValue = e.target.value.trim;
+    const inputValue = e.target.value;
     setPassword(inputValue);
-    setIsPasswordFilled(!!inputValue); //check if input is not empty
+    setIsPasswordFilled(!inputValue); //check if input is not empty
   };
 
 
@@ -150,10 +150,9 @@ const Login = () => {
             </div>
           
             <a
-        href={isPasswordFilled ? '/dashboard' : null} // Disable the anchor if the input is empty
-        className={`flex justify-center mt-10 text-center transform -translate-y-1/2 bg-black text-white dark:bg-white dark:text-green-500 hover:opacity-50 hover:text-white rounded-md px-2 py-2 ${
-          isPasswordFilled ? 'cursor-pointer' : 'cursor-not-allowed'
-        }`}
+        href= '/dashboard' 
+        className='flex justify-center mt-10 text-center transform -translate-y-1/2 bg-black text-white dark:bg-white dark:text-green-500 hover:opacity-50 hover:text-white rounded-md px-2 py-2'
+          
       >
         Log In
       </a>
