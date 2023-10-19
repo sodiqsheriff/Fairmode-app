@@ -7,7 +7,7 @@ import Dashboard from './Component/Dashboard';
 import './App.css'
 const router = createBrowserRouter([
   {path:'/', element:<Login />},
-  {path:'/dashboard', element:<Dashboard />},
+  {path:'/Dashboard', element:<Dashboard />},
 ])
 function App() {
  
