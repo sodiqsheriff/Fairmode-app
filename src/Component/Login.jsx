@@ -145,7 +145,7 @@ const Login = () => {
             </div>
           
             <a
-        href= "/Dashboard" 
+        href= "/" 
         className='flex justify-center mt-10 text-center transform -translate-y-1/2 bg-black text-white dark:bg-white dark:text-green-500 hover:opacity-50 hover:text-white rounded-md px-2 py-2'
           
       >
