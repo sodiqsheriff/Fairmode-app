@@ -132,7 +132,7 @@ const Login = () => {
                   <h1 className='font-bold dark:text-white'>Fairmoney Pin</h1>
                   <h1 className='text-gray-400 dark:text-white dark:hover:opacity-50'>Forgot your PIN?</h1>
                 </span>
-              <input type={showPassword ? 'text' : 'password'} placeholder='Password' value={password} onChange={handlePasswordChange}  className='rounded border border-gray-500 h-12 w-full  px-5 font-semibold font-inter' required/>
+              <input type={showPassword ? 'text' : 'password'} placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}  className='rounded border border-gray-500 h-12 w-full  px-5 font-semibold font-inter' required/>
               <span  onClick={togglePasswordVisibilty} className='absolute right-4 top-1/2 transform-translate-y-1/2 cursor-pointer'>
                 {showPassword ? (
                   <AiOutlineEyeInvisible size={20} />
